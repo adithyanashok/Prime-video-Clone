@@ -1,0 +1,441 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  text-decoration: none;
+  list-style: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --nav-background: #1a242f;
+  --button-clr: #0f79af;
+  --modal-background: #252e39;
+  --modal-hover: #445467;
+  --link-clr: #c7c2c2;
+  --text-clr: #ffffff;
+}
+
+body {
+  font-family: "Noto Sans", sans-serif;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  object-fit: cover;
+}
+
+.logo-img {
+  height: 2.3rem;
+}
+
+.nav-items {
+  display: flex;
+  align-items: center;
+}
+
+.lang {
+  display: flex;
+  align-items: center;
+}
+.lang i {
+  padding: 0 0.2em;
+}
+
+.item-link {
+  color: var(--link-clr);
+  padding: 0 0.5em;
+}
+
+.item-link:hover {
+  color: #f8f8f8;
+}
+
+.item:nth-last-child(1) {
+  display: none;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2em;
+}
+
+header {
+  background-color: var(--nav-background);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.dropdown-menu {
+  height: 400px;
+  background-color: var(--modal-background);
+  position: absolute;
+  right: 10%;
+  overflow-y: scroll;
+  display: none;
+}
+
+.dropdown-mobile {
+  display: none;
+  height: fit-content;
+}
+
+.lang-item .lang {
+  color: var(--link-clr);
+}
+
+.dropdown {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(200px, 1fr));
+}
+
+.dropdown-menu .close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  z-index: 5;
+  cursor: pointer;
+  color: var(--link-clr);
+  font-size: 2rem;
+  display: none;
+}
+
+.dropdown-menu.open {
+  display: grid;
+}
+
+.dropdown .language-col:not(:last-of-type) {
+  border-right: 1px solid #020202;
+}
+
+.lang-item {
+  padding: 1em 2em;
+  cursor: pointer;
+}
+.lang-item:hover {
+  background-color: var(--modal-hover);
+}
+
+.lang-item a {
+  color: var(--link-clr);
+}
+
+.lang-item i {
+  padding: 0;
+}
+
+.lang-item.lang {
+  color: var(--link-clr);
+}
+
+.down {
+  position: absolute;
+  right: 10px;
+}
+
+@media all and (max-width: 880px) {
+  .logo-img {
+    height: 2.3rem;
+  }
+  .dropdown-menu {
+    width: 100vw;
+    height: 100vh;
+    right: 0;
+    top: 0;
+    padding: 3em 0;
+    overflow: hidden;
+  }
+  .dropdown-menu .close {
+    display: block;
+  }
+  .dropdown ol {
+    line-height: 1;
+  }
+  .lang-item a {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  nav {
+    padding: 0.5em 0;
+  }
+  .logo-img {
+    height: 2rem;
+  }
+  .item {
+    display: none;
+  }
+  .item:nth-last-child(1) {
+    display: block;
+  }
+  .dropdown-menu {
+    height: 100vh;
+  }
+  .dropdown {
+    overflow-y: scroll;
+    display: none;
+  }
+  .dropdown.open {
+    display: block;
+  }
+  .dropdown-mobile {
+    display: block;
+  }
+  .dropdown li {
+    border-bottom: 1px solid var(--link-clr);
+  }
+}
+
+main {
+  background-color: #000;
+}
+
+.section {
+  min-height: 80vh;
+  color: var(--text-clr);
+  padding: 5rem;
+  position: relative;
+  background-color: #000;
+}
+.description {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40%;
+}
+
+.introduction {
+  margin-top: 4rem;
+  background: linear-gradient(to right, #000 40%, transparent 58%),
+    url(./images/cover.jpg) no-repeat right top;
+  background-size: cover;
+}
+
+.main-title,
+.title {
+  font-size: 2.3rem;
+  margin-bottom: 1.5rem;
+}
+
+.sub-intro,
+.text {
+  font-size: 1.2rem;
+  margin-bottom: 2.5rem;
+  line-height: 1.5;
+}
+
+.btn {
+  color: var(--text-clr);
+  background-color: var(--button-clr);
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  padding: 1em 4.5em;
+  border-radius: 2px;
+}
+
+.entertainment {
+  background: linear-gradient(to left, #000 40%, transparent 58%),
+    url(./images/living-room.jpg) no-repeat center;
+  background-size: cover;
+}
+
+.entertainment .description,
+.fire-stick .description {
+  right: 5%;
+}
+
+.ad-free {
+  background: linear-gradient(to right, #000 40%, transparent 58%),
+    url(./images/membership.jpg) no-repeat center;
+  background-size: cover;
+}
+
+.more-info {
+  font-size: 0.9rem;
+  font-weight: 100;
+  margin-top: 1.5rem;
+}
+
+.fire-stick {
+  background: linear-gradient(to left, #000 40%, transparent 58%),
+    url(./images/fire-stick.jpg) no-repeat center;
+  background-size: cover;
+}
+
+.benefits {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  color: #000;
+  text-align: center;
+  gap: 1rem;
+  padding: 3rem;
+}
+
+.benefits .section {
+  padding: 0;
+}
+.benfit {
+  flex: 1;
+}
+
+/* .title {
+  font-size: 2rem;
+}
+
+.text {
+  font-size: 1.2rem;
+} */
+
+.kids {
+  background: linear-gradient(to right, #000 40%, transparent 58%),
+    url(./images/kids-main.jpg) no-repeat center;
+  background-size: cover;
+}
+
+footer {
+  background-color: #222222;
+  text-align: center;
+  padding: 1em 0;
+  font-size: 0.8rem;
+}
+
+footer .logo-img {
+  width: 10rem;
+  height: 4rem;
+  margin-bottom: 0.5rem;
+}
+
+footer a {
+  color: var(--button-clr);
+}
+
+.terms {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.terms p {
+  color: var(--link-clr);
+}
+
+@media (max-width: 1024px) {
+  .main-title,
+  .title {
+    font-size: 1.8rem;
+  }
+  .sub-intro,
+  .text,
+  .more-info {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 1024px) and (orientation: portrait) {
+  .section {
+    min-height: 100vh;
+  }
+  .description {
+    left: 50%;
+    transform: translate(-50%, -20%);
+    text-align: center;
+    width: 60%;
+    padding: 5rem 0;
+  }
+  .sub-intro,
+  .text {
+    margin-bottom: 1rem;
+  }
+  .btn {
+    width: 100%;
+  }
+  .introduction {
+    margin-top: 4rem;
+    background: linear-gradient(to top, #000 40%, transparent 80%),
+      url(./images/mobile-cover.jpg) no-repeat top;
+    background-size: contain;
+  }
+  .entertainment {
+    background: linear-gradient(to top, #000 40%, transparent 80%),
+      url(./images/living-room-mobile.jpg) no-repeat top;
+    background-size: contain;
+  }
+  .ad-free {
+    background: linear-gradient(to top, #000 40%, transparent 80%),
+      url(./images/membership-mobile.jpg) no-repeat top;
+    background-size: contain;
+  }
+  .fire-stick {
+    background: linear-gradient(to top, #000 40%, transparent 80%),
+      url(./images/fire-stick-mobile.jpg) no-repeat top;
+    background-size: contain;
+  }
+  .kids {
+    background: linear-gradient(to top, #000 40%, transparent 80%),
+      url(./images/kids.jpg) no-repeat top;
+    background-size: contain;
+  }
+
+  .benefits {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 800px) and (orientation: portrait) {
+  .main-title,
+  .title {
+    font-size: 2rem;
+  }
+  .sub-intro,
+  .text,
+  .more-info {
+    font-size: 1rem;
+  }
+  .description {
+    width: 90%;
+  }
+}
+
+@media (max-width: 800px) and (orientation: landscape) {
+  /* .section {
+    min-height: 100vh;
+  } */
+  .main-title,
+  .title {
+    font-size: 1.5rem;
+  }
+  .sub-intro,
+  .text,
+  .more-info {
+    font-size: 1rem;
+  }
+  .description {
+    padding: 5rem 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .introduction {
+    margin-top: 3rem;
+  }
+  .description {
+    transform: translate(-50%, -30%);
+    padding: 5rem 0;
+  }
+}
